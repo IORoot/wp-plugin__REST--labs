@@ -35,6 +35,11 @@ class labs {
             'labs_category' => 4
         ), 'https://labs.londonparkour.com/wp-json/wp/v2/tutorial?orderby=rand' ) );
 
+
+        if (is_wp_error($response)) {
+            return;
+        }
+        
         $this->posts = json_decode( $response['body'] ); // our posts are here
 
         \set_transient( 'labsstack', json_decode( $this->posts ), DAY_IN_SECONDS );

@@ -16,6 +16,7 @@ class labs_rest {
     public $posttype = 'tutorial';
     public $category;
     public $classes  = '';
+    public $content;
 
 
     public function set_count($count)
@@ -43,12 +44,25 @@ class labs_rest {
         $this->category = $category;
     }
 
+    public function set_content($content)
+    {
+        $this->content = $content;
+    }
+
 
 
     public function run()
     {
         $this->REST_call();
-        $this->render();
+
+        if (empty($this->content)){
+            $this->render_link();
+        }
+
+        if (!empty($this->content)){
+            $this->render_content();
+        }
+
     }
 
 
@@ -72,17 +86,18 @@ class labs_rest {
             $category_name => $this->category,
         ), 'https://labs.londonparkour.com/wp-json/wp/v2/'.$this->posttype ) );
 
+
+        if (is_wp_error($response)) { return; }
+        
         $this->posts = json_decode( $response['body'] ); // our posts are here
 
         \set_transient( 'labsrest', json_decode( $this->posts ), HOUR_IN_SECONDS );
     }
 
 
-    public function render()
+    public function render_link()
     {
-        if (!isset($this->posts)){
-            return;
-        }
+        if (!isset($this->posts)){ return; }
 
         $output = '';
 
@@ -97,6 +112,56 @@ class labs_rest {
 
         $this->result = $output;
     }
+
+
+
+
+    private function render_content()
+    {
+        if (!isset($this->posts)){ return; }
+
+        $output = '';
+
+        foreach($this->posts as $this->current_post )
+        {
+            $this->result = $this->replace_moustaches($this->content);
+        }
+
+    }
+
+
+
+    private function replace_moustaches($content)
+    {
+        $this->new_content = json_decode(json_encode($content), true); // convert stdClass to arrays
+
+        preg_match_all('/{{(.*?)}}/', $this->new_content, $moustaches);
+
+        foreach ($moustaches[1] as $key => $field)
+        {
+            if (!property_exists($this->current_post, $field)) {
+                continue;
+            }
+            
+            if (is_array($this->current_post->$field)){
+                $this->new_content = str_replace($moustaches[0][$key], $this->current_post->$field[0], $this->new_content);
+                continue;
+            }
+
+            if (is_object($this->current_post->$field)){
+                $this->new_content = str_replace($moustaches[0][$key], $this->current_post->$field->rendered, $this->new_content);
+                continue;
+            }
+
+            $this->new_content = str_replace($moustaches[0][$key], $this->current_post->$field, $this->new_content);
+            
+            
+        }
+
+        return $this->new_content;
+    }
+
+
 
 
 

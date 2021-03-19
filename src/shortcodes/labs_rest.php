@@ -3,7 +3,7 @@
 /**
  * Create the class and return results.
  */
-function andyp_labs_rest_callback($atts){
+function andyp_labs_rest_callback($atts, $content = null){
 
     $labs = new \andyp\labsstack\REST\labs_rest();
 
@@ -21,6 +21,9 @@ function andyp_labs_rest_callback($atts){
     }
     if (isset($atts['order'])){
         $labs->set_order($atts['order']);
+    }
+    if (isset($content)){
+        $labs->set_content($content);
     }
 
     $labs->run();
