@@ -106,7 +106,9 @@ class labs_rest {
             $f = new \NumberFormatter("en", \NumberFormatter::SPELLOUT); 
             $id = $f->format($key); // 1 = 'one', 12 = 'twelve'
 
-            $output .= '<a target="_blank" href="'.$post->link.'" class="image-'.$id.' '.$this->classes.'" style="background-image: url(\''.$post->imageURL.'\');"></a>';
+            $output .= '<a target="_blank" href="'.$post->link.'">';
+                $output .= '<img class="lazyload image-'.$id.' '.$this->classes.'" src="'.$post->imageURL.'" alt="'.$post->title->rendered.'">';
+            $output .= '</a>';
 
         }
 

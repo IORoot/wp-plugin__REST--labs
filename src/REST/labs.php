@@ -64,7 +64,9 @@ class labs {
             $zebra = ($key++%2==1) ? 'odd' : 'even';
 
             $output .= '<li class="'.$id.' '.$zebra.' w-full h-40 bg-smoke">';
-                $output .= '<div class="bg-cover bg-center w-full h-full" style="background-image: url(\''.$post->imageURL.'\');" ></div>';
+                $output .= '<div class="w-full h-full mb-2">';
+                    $output .= '<img class="lazyload object-cover" src="'.$post->imageURL.'" alt="'.$post->title->rendered.'">';
+                $output .= '</div>';
             $output .= '</li>';
         }
 
