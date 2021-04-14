@@ -107,7 +107,7 @@ class labs_rest {
             $id = $f->format($key); // 1 = 'one', 12 = 'twelve'
 
             $output .= '<a target="_blank" href="'.$post->link.'">';
-                $output .= '<img class="lazyload image-'.$id.' '.$this->classes.'" src="'.$post->imageURL.'" alt="'.$post->title->rendered.'">';
+                $output .= '<img class="lazyload image-'.$id.' '.$this->classes.'" src="'.$post->imageURL.'" alt="'.$post->title->rendered.'" width="'.$post->imageWidth.'" height="'.$post->imageHeight.'">';
             $output .= '</a>';
 
         }

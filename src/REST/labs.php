@@ -65,7 +65,7 @@ class labs {
 
             $output .= '<li class="'.$id.' '.$zebra.' w-full h-40 bg-smoke">';
                 $output .= '<div class="w-full h-full mb-2">';
-                    $output .= '<img class="lazyload object-cover h-full" src="'.$post->imageURL.'" alt="'.$post->title->rendered.'">';
+                    $output .= '<img class="lazyload object-cover h-full" src="'.$post->imageURL.'" alt="'.$post->title->rendered.'" width="'.$post->imageWidth.'" height="'.$post->imageHeight.'">';
                 $output .= '</div>';
             $output .= '</li>';
         }
