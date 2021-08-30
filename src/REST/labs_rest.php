@@ -17,6 +17,7 @@ class labs_rest {
     public $category;
     public $classes  = '';
     public $content;
+    public $endpoint = "https://parkourlabs.com/wp-json/wp/v2/";
 
 
     public function set_count($count)
@@ -84,7 +85,7 @@ class labs_rest {
             'per_page' => $this->count,
             'orderby' => $this->order,
             $category_name => $this->category,
-        ), 'https://labs.londonparkour.com/wp-json/wp/v2/'.$this->posttype ) );
+        ), $this->endpoint.$this->posttype ) );
 
 
         if (is_wp_error($response)) { return; }

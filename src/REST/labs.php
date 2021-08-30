@@ -11,6 +11,7 @@ class labs {
 
     public $result;
 
+    public $endpoint = "https://parkourlabs.com/wp-json/wp/v2/";
 
     public function __construct()
     {
@@ -33,7 +34,7 @@ class labs {
         $response = \wp_remote_get( add_query_arg( array(
             'per_page' => 10,
             'labs_category' => 4
-        ), 'https://labs.londonparkour.com/wp-json/wp/v2/tutorial?orderby=rand' ) );
+        ), $this->endpoint.'/tutorial?orderby=rand' ) );
 
 
         if (is_wp_error($response)) {
