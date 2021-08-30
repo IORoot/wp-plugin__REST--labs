@@ -11,7 +11,7 @@ class labs {
 
     public $result;
 
-    public $endpoint = "https://parkourlabs.com/wp-json/wp/v2/";
+    public $endpoint = "https://parkourlabs.com/wp-json/wp/v2";
 
     public function __construct()
     {

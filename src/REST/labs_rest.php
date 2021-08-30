@@ -17,7 +17,7 @@ class labs_rest {
     public $category;
     public $classes  = '';
     public $content;
-    public $endpoint = "https://parkourlabs.com/wp-json/wp/v2/";
+    public $endpoint = "https://parkourlabs.com/wp-json/wp/v2";
 
 
     public function set_count($count)
