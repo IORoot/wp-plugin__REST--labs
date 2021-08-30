@@ -27,8 +27,9 @@ class labs {
     private function REST_call()
     {
         $transient = \get_transient( 'labsstack' );
-        if( ! empty( $transient ) ) {
-            return $transient;
+        if( ! empty( $transient ) ) { 
+            $this->posts = json_decode($transient);
+            return; 
         }
 
         $response = \wp_remote_get( add_query_arg( array(
@@ -43,7 +44,7 @@ class labs {
         
         $this->posts = json_decode( $response['body'] ); // our posts are here
 
-        \set_transient( 'labsstack', json_decode( $this->posts ), DAY_IN_SECONDS );
+        \set_transient( 'labsstack', json_encode( $this->posts ), DAY_IN_SECONDS );
     }
 
 

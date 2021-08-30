@@ -73,8 +73,11 @@ class labs_rest {
      */
     private function REST_call()
     {
-        $transient = \get_transient( 'labsrest' );
-        if( ! empty( $transient ) ) { return $transient; }
+        $transient = \get_transient( 'labsrest-'.$this->posttype );
+        if( ! empty( $transient ) ) { 
+            $this->posts = json_decode($transient);
+            return; 
+        }
 
         $category_name = '';
         if (!empty($this->category)){
@@ -85,14 +88,14 @@ class labs_rest {
             'per_page' => $this->count,
             'orderby' => $this->order,
             $category_name => $this->category,
-        ), $this->endpoint.$this->posttype ) );
+        ), $this->endpoint.'/'.$this->posttype ) );
 
 
         if (is_wp_error($response)) { return; }
         
         $this->posts = json_decode( $response['body'] ); // our posts are here
 
-        \set_transient( 'labsrest', json_decode( $this->posts ), HOUR_IN_SECONDS );
+        \set_transient( 'labsrest-'.$this->posttype, json_encode( $this->posts ), HOUR_IN_SECONDS );
     }
 
 
