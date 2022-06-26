@@ -1,6 +1,6 @@
 # Labs Stack
 
-This is a small shortcode to display a "stack" of images from the latest ParkouLabs images.
+This is a small shortcode to display a "stack" of images from the latest ParkourLabs.com images.
 
 ## Deploy
 
