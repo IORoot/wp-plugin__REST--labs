@@ -1,18 +1,15 @@
-
-
 <div id="top"></div>
 
 <div align="center">
 
 <div style="filter: invert(64%) sepia(18%) saturate(3681%) hue-rotate(113deg) brightness(86%) contrast(87%);">
-<img src="https://cdn.jsdelivr.net/npm/@mdi/svg@6.7.96/svg/fencing.svg" style="width:200px;"></img>
+<img src="https://cdn.jsdelivr.net/npm/@mdi/svg@6.7.96/svg/api.svg" style="width:200px;"></img>
 </div>
 
 <h3 align="center">ParkourLabs.com REST API</h3>
 
 <p align="center">
     This is a small plugin to utilise the ParkourLabs.com REST API custom post types and their images. The provided shortcode will display a "stack" of images from those images. 
-    <a href="https://github.com/IORoot/wp-plugin__REST--labs"><strong>Explore the repo »</strong></a>
 </p>    
 </div>
 
@@ -195,6 +192,28 @@ Don't forget to give the project a star! Thanks again!
 ##  7. <a name='License'></a>License
 
 Distributed under the MIT License.
+
+MIT License
+
+Copyright (c) 2022 Andy Pearson
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
