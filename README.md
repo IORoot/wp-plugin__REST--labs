@@ -5,7 +5,7 @@
 
 <img src="https://svg-rewriter.sachinraja.workers.dev/?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fnpm%2F%40mdi%2Fsvg%406.7.96%2Fsvg%2Fapi.svg&fill=%2322C55E&width=200px&height=200px" style="width:200px;"/>
 
-<h3 align="center">ParkourLabs.com REST API</h3>
+<h3 align="center">ParkourLabs.com REST API client and stack shortcodes</h3>
 
 <p align="center">
     This is a small plugin to utilise the ParkourLabs.com REST API custom post types and their images. The provided shortcode will display a "stack" of images from those images. 
