@@ -67,7 +67,7 @@ These are the steps to get up and running with this plugin.
 
 1. Clone the repo into your wordpress plugin folder
     ```sh
-    git clone https://github.com/IORoot/wp-plugin__REST--labs.git ./wp-content/plugins/ParkourLabs_REST_API
+    git clone https://github.com/IORoot/wp-plugin__REST--labs.git ./wp-content/plugins/ParkourLabs_REST_API_stack
     ```
 1. Insert one of the two shortcodes into your page.
     ```php
